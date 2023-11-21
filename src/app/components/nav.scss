@@ -1,0 +1,105 @@
+@import '../../variables.scss';
+
+.desktop {
+    width: 100vw;
+    height: 80px;
+
+    position: relative;
+
+    .controlador-nav {
+        position: fixed;
+
+        width: 100%;
+        height: 80px;
+
+        //display
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        //ul links
+        ul {
+            //display
+            display: flex;
+            gap: 30px;
+
+            //lista
+            list-style: none;
+
+            overflow: initial;
+            li {
+                a {
+                    //decoração link
+                    text-decoration: none;
+
+                    //cor
+                    color: #000;
+
+                    //position
+                    position: relative;
+
+
+                    //fonte
+                    font-size: 18px;
+                    letter-spacing: 2px;
+
+                    transition: all .2s;
+
+                    //before
+                    &::before {
+                        content: '';
+                        //position
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+
+                        //dimenções
+                        height: 2px;
+                        width: 0%;
+
+                        //cor
+                        background: $color-2;
+
+                     
+
+                        transition: all .5s;
+
+                   
+                    }
+                  
+                    &:hover::before{
+                        width: 100%;
+                       
+                        
+                    }
+                }
+            }
+        }
+
+        .div-imagem{
+
+            img{
+                width: 170px;
+                height: 170px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+.mobile{
+    display: none;
+}
+
+@media screen and (min-width: 200px) and (max-width: 700px) {
+    .desktop{
+        .controlador-nav{
+
+            ul{
+                display: none;
+            }
+        }
+    }
+    .mobile{
+        display: block;
+    }
+}
